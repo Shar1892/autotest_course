@@ -3,14 +3,10 @@
 # [1, 0, 1, 2, 0, 1, 3]  => [1, 1, 2, 1, 3, 0, 0]
 
 def move_zeros(lst):
-    digit_list = []
-    zero_list = []
-    for digit in lst:
-        if digit:
-            digit_list.append(digit)
-        else:
-            zero_list.append(digit)
-    lst = digit_list + zero_list
+    for i in range(len(lst) - 1, -1, -1):
+        if not lst[i]:
+            lst.append(lst.pop(i))
+
     # Здесь нужно написать код
     return lst
 
