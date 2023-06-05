@@ -29,10 +29,11 @@ class Trigon:
             if side <= 0:
                 raise ValueError('Стороны должны быть положительными')
 
-        if self.sides[0] + self.sides[1] <= self.sides[2] or self.sides[1] + self.sides[2] <= self.sides[0] or self.sides[0] + self.sides[2] <= self.sides[1]:
-            raise Exception("Не треугольник")
         if len(self.sides) != 3:
             raise IndexError(f'Передано {len(self.sides)} аргументов, а ожидается 3')
+
+        if self.sides[0] + self.sides[1] <= self.sides[2] or self.sides[1] + self.sides[2] <= self.sides[0] or self.sides[0] + self.sides[2] <= self.sides[1]:
+            raise Exception("Не треугольник")
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
