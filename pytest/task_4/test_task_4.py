@@ -12,9 +12,10 @@ def all_division(*arg1):
     return division
 
 
+@pytest.mark.usefixtures("print_start_end")
 class TestClass:
 
-    def test_smoke_division_positive_numbers(self):
+    def test_smoke_division_positive_numbers(self, print_duration):
         result = all_division(10, 2)
         assert result == 5
 

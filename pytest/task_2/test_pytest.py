@@ -18,16 +18,18 @@ def all_division(*arg1):
 
 
 @pytest.mark.smoke
-def test_division_positive_numbers():
+def test_smoke_division_positive_numbers():
     result = all_division(10, 2)
     assert result == 5
 
 
+@pytest.mark.acceptance
 def test_division_negative_numbers():
     result = all_division(-10, -2)
     assert result == 5
 
 
+@pytest.mark.acceptance
 def test_division_negative_number_to_positive_number():
     result = all_division(-10, 2)
     assert result == -5
@@ -39,6 +41,6 @@ def test_division_zero_to_positive_number():
 
 
 @pytest.mark.smoke
-def test_division_by_zero():
+def test_smoke_division_by_zero():
     with pytest.raises(ZeroDivisionError):
         all_division(10, 0)
